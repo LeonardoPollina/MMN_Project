@@ -1,0 +1,76 @@
+{
+  "@id": "https://bbp.epfl.ch/neurosciencegraph/data/a0178302-9d9a-45d1-9c84-b44b81bf0f9c",
+  "@type": [
+    "Mesh",
+    "BrainParcellationMesh"
+  ],
+  "atlasRelease": {
+    "@id": "https://bbp.epfl.ch/neurosciencegraph/data/831a626a-c0ae-4691-8ce8-cfb7491345d9"
+  },
+  "brainLocation": {
+    "atlasSpatialReferenceSystem": {
+      "@id": "https://bbp.epfl.ch/neurosciencegraph/data/allen_ccfv3_spatial_reference_system",
+      "@type": [
+        "AtlasSpatialReferenceSystem",
+        "BrainAtlasSpatialReferenceSystem"
+      ]
+    },
+    "brainRegion": {
+      "@id": "mba:375",
+      "label": "Ammon's horn"
+    }
+  },
+  "contribution": {
+    "@type": "Contribution",
+    "agent": {
+      "@id": "https://www.grid.ac/institutes/grid.417881.3",
+      "@type": [
+        "Organization",
+        "Agent"
+      ]
+    }
+  },
+  "description": "Brain region mesh - Ammon'S Horn (ID: 375)",
+  "distribution": {
+    "@type": "DataDownload",
+    "contentSize": {
+      "unitCode": "bytes",
+      "value": 1173048
+    },
+    "contentUrl": "https://bbp.epfl.ch/nexus/v1/files/bbp/atlas/491d692c-c248-4852-9c04-493e176256c0",
+    "digest": {
+      "algorithm": "SHA-256",
+      "value": "a92873046cfdbc073a247f949528eb7039333cb774deb69933745c056c9996f7"
+    },
+    "encodingFormat": "application/obj",
+    "name": "375.obj"
+  },
+  "isRegisteredIn": {
+    "@id": "https://bbp.epfl.ch/neurosciencegraph/data/allen_ccfv3_spatial_reference_system",
+    "@type": [
+      "BrainAtlasSpatialReferenceSystem",
+      "AtlasSpatialReferenceSystem"
+    ]
+  },
+  "name": "Ammon'S Horn mesh",
+  "spatialUnit": "um",
+  "subject": {
+    "@type": "Subject",
+    "species": {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_10090",
+      "label": "Mus musculus"
+    }
+  },
+  "_constrainedBy": "https://neuroshapes.org/dash/brainparcellationmesh",
+  "_createdAt": "2019-09-20T08:56:56.531Z",
+  "_createdBy": "https://bbp.epfl.ch/nexus/v1/realms/bbp/users/lurie",
+  "_deprecated": false,
+  "_incoming": "https://bbp.epfl.ch/nexus/v1/resources/bbp/atlas/datashapes:brainparcellationmesh/a0178302-9d9a-45d1-9c84-b44b81bf0f9c/incoming",
+  "_outgoing": "https://bbp.epfl.ch/nexus/v1/resources/bbp/atlas/datashapes:brainparcellationmesh/a0178302-9d9a-45d1-9c84-b44b81bf0f9c/outgoing",
+  "_project": "https://bbp.epfl.ch/nexus/v1/projects/bbp/atlas",
+  "_rev": 4,
+  "_schemaProject": "https://bbp.epfl.ch/nexus/v1/projects/neurosciencegraph/datamodels",
+  "_self": "https://bbp.epfl.ch/nexus/v1/resources/bbp/atlas/datashapes:brainparcellationmesh/a0178302-9d9a-45d1-9c84-b44b81bf0f9c",
+  "_updatedAt": "2021-06-29T14:57:55.337Z",
+  "_updatedBy": "https://bbp.epfl.ch/nexus/v1/realms/bbp/users/lurie"
+}

@@ -1,0 +1,76 @@
+{
+  "@id": "https://bbp.epfl.ch/neurosciencegraph/data/c704be40-b2c3-41e2-91a4-ebed6833de1c",
+  "@type": [
+    "Mesh",
+    "BrainParcellationMesh"
+  ],
+  "atlasRelease": {
+    "@id": "https://bbp.epfl.ch/neurosciencegraph/data/831a626a-c0ae-4691-8ce8-cfb7491345d9"
+  },
+  "brainLocation": {
+    "atlasSpatialReferenceSystem": {
+      "@id": "https://bbp.epfl.ch/neurosciencegraph/data/allen_ccfv3_spatial_reference_system",
+      "@type": [
+        "AtlasSpatialReferenceSystem",
+        "BrainAtlasSpatialReferenceSystem"
+      ]
+    },
+    "brainRegion": {
+      "@id": "mba:423",
+      "label": "Field CA2"
+    }
+  },
+  "contribution": {
+    "@type": "Contribution",
+    "agent": {
+      "@id": "https://www.grid.ac/institutes/grid.417881.3",
+      "@type": [
+        "Organization",
+        "Agent"
+      ]
+    }
+  },
+  "description": "Brain region mesh - Field Ca2 (ID: 423)",
+  "distribution": {
+    "@type": "DataDownload",
+    "contentSize": {
+      "unitCode": "bytes",
+      "value": 250059
+    },
+    "contentUrl": "https://bbp.epfl.ch/nexus/v1/files/bbp/atlas/2758f099-a6e8-47c0-9a29-26dd40a4f0bb",
+    "digest": {
+      "algorithm": "SHA-256",
+      "value": "f27b17fc3cd3075caddbffde5cf3f8b760d2735168e57d7cacd08714c43061af"
+    },
+    "encodingFormat": "application/obj",
+    "name": "423.obj"
+  },
+  "isRegisteredIn": {
+    "@id": "https://bbp.epfl.ch/neurosciencegraph/data/allen_ccfv3_spatial_reference_system",
+    "@type": [
+      "BrainAtlasSpatialReferenceSystem",
+      "AtlasSpatialReferenceSystem"
+    ]
+  },
+  "name": "Field Ca2 mesh",
+  "spatialUnit": "um",
+  "subject": {
+    "@type": "Subject",
+    "species": {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_10090",
+      "label": "Mus musculus"
+    }
+  },
+  "_constrainedBy": "https://neuroshapes.org/dash/brainparcellationmesh",
+  "_createdAt": "2019-09-20T08:58:08.670Z",
+  "_createdBy": "https://bbp.epfl.ch/nexus/v1/realms/bbp/users/lurie",
+  "_deprecated": false,
+  "_incoming": "https://bbp.epfl.ch/nexus/v1/resources/bbp/atlas/datashapes:brainparcellationmesh/c704be40-b2c3-41e2-91a4-ebed6833de1c/incoming",
+  "_outgoing": "https://bbp.epfl.ch/nexus/v1/resources/bbp/atlas/datashapes:brainparcellationmesh/c704be40-b2c3-41e2-91a4-ebed6833de1c/outgoing",
+  "_project": "https://bbp.epfl.ch/nexus/v1/projects/bbp/atlas",
+  "_rev": 4,
+  "_schemaProject": "https://bbp.epfl.ch/nexus/v1/projects/neurosciencegraph/datamodels",
+  "_self": "https://bbp.epfl.ch/nexus/v1/resources/bbp/atlas/datashapes:brainparcellationmesh/c704be40-b2c3-41e2-91a4-ebed6833de1c",
+  "_updatedAt": "2021-06-29T14:58:08.582Z",
+  "_updatedBy": "https://bbp.epfl.ch/nexus/v1/realms/bbp/users/lurie"
+}

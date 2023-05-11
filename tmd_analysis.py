@@ -19,15 +19,19 @@ plt.rcParams.update(rc)
 def normalize_phs(p1):
     return np.divide(p1, np.max(p1)).tolist()
 
-def load_population(clone_morphs,sample=500):
+def load_population(morph_dir:str,sample=False):
     ''' Load any pop of neurons from folder '''
-    L_clones = glob.glob(clone_morphs)
+    L = glob.glob(morph_dir)
     np.random.shuffle(L_clones)
     
-    pop_clones_tmd = tmd.io.load_population(L_clones[:sample], use_morphio=True)
-    phs_den_clones = [tmd.methods.get_ph_neuron(n, neurite_type=neurite_type) for n in pop_clones_tmd.neurons]
-    phs_den_clones_norm = [normalize_phs(p) for p in phs_den_clones if len(p)>0]
-    return phs_den_clones,phs_den_clones_norm
+    if sample:
+        pop_tmd = tmd.io.load_population(L, use_morphio=True)
+    else:
+        pop_tmd = tmd.io.load_population(L[:sample], use_morphio=True)
+
+    phs_neurite = [tmd.methods.get_ph_neuron(n, neurite_type=neurite_type) for n in pop_tmd.neurons]
+    phs_neurite_norm = [normalize_phs(p) for p in phs_neurite if len(p)>0]
+    return phs_neurite,phs_neurite_norm
     
 def compare_clone_strategy(orig_morphs,repaired_morphs,clone_morphs,neurite_type='dendrites',plot=True,save_file_name=False):
     L_rep = glob.glob(orig_morphs)
@@ -98,11 +102,53 @@ def compare_clone_strategy(orig_morphs,repaired_morphs,clone_morphs,neurite_type
         out_dict = {'orig':phs_den_original_norm,'repaired':phs_den_repaired_norm,'cloned':phs_den_clones_norm}
         return None,out_dict
 
+# make compare_clone_strategy for single neuron group
+def get_persistent_pop(morph_path:str,neurite_type:str,normalize=False):
+    L_rep = glob.glob(morph_path)
+    pop_rep_tmd = tmd.io.load_population(L_rep, use_morphio=True)
+    phs_den_original = [tmd.methods.get_ph_neuron(n, neurite_type=neurite_type) for n in pop_or_tmd.neurons]
+    if normalize:
+        phs_den_original_norm = [normalize_phs(p) for p in phs_den_original if len(p)>0]
+        return phs_den_original, phs_den_original_norm
+    else:
+        return phs_den_original, _
 
 def persistence_image_diff(Z1, Z2, new_fig=True, subplot=111, xlims=None, ylims=None,
                            norm=True, vmin=-1., vmax=1., cmap='bwr',add_colorbar=True, **kwargs):
     """Takes as input two images as exported from the gaussian kernel
        plotting function, and plots their difference. Original function from tmd
+
+    Parameters
+    ----------
+    Z1 : np.array
+        Persistence image 1
+    Z2 : np.array
+        Persistence image 2
+    new_fig : bool  (default: True)
+        Whether to create a new figure
+    subplot : int (default: 111)
+        Subplot to plot in
+    xlims : tuple (default: None)   
+        X-axis limits
+    ylims : tuple (default: None)   
+        Y-axis limits   
+    norm : bool (default: True)
+        Whether to normalize the images
+    vmin : float (default: -1.)
+        Minimum value for the colormap
+    vmax : float (default: 1.)
+        Maximum value for the colormap
+    cmap : str (default: 'bwr')
+        Colormap to use
+    add_colorbar : bool (default: True)
+        Whether to add a colorbar
+    **kwargs : dict 
+        Keyword arguments to pass to the plotting function
+
+    Returns
+    -------
+    cm.plot_style
+        Plot style object
     """
     if xlims is None or xlims is None:
         xlims, ylims = ((0, 100), (0, 100))
@@ -122,6 +168,26 @@ def persistence_image_diff(Z1, Z2, new_fig=True, subplot=111, xlims=None, ylims=
 
 
 def get_diff_data(Z0,Z1,norm_factor=None, bw_method=None, xlims=None, ylims=None,**kwargs):
+    '''
+    To be used after get_persistent_pop to get the persistent image data for 2 persistent images
+
+    Parameters
+    ----------
+    Z0 : np.array
+        Persistence image 1
+    Z1 : np.array
+        Persistence image 2
+    norm_factor : float (default: None)
+        Normalization factor for the persistence image
+    bw_method : float (default: None)
+        Bandwidth method for the gaussian kernel
+    xlims : tuple (default: None)
+        X-axis limits
+    ylims : tuple (default: None)
+        Y-axis limits
+    **kwargs : dict
+        Keyword arguments to pass to the tmd.Topology.analysis.get_persistence_image_data
+    '''
     collapsed = tmd.analysis.collapse(Z0)
     #Z0, _ = view.plot.persistence_image(collapsed)
     Z0 = analysis.get_persistence_image_data(collapsed,**kwargs)
@@ -145,7 +211,42 @@ def plot_persistent_diff(Z0,Z1,savefig=False,**kwargs):
 def persistence_image_average(ph_list, new_fig=True, subplot=111, xlims=None,
                               ylims=None, norm_factor=1.0, vmin=None, vmax=None,
                               cmap='jet', weighted=False,add_colorbar=False, **kwargs):
-    """Merges a list of ph diagrams and plots their respective average image.
+    """
+    Merges a list of ph diagrams and plots their respective average image.
+
+    Parameters
+    ----------
+    ph_list : list
+        List of ph diagrams 
+    new_fig : bool  (default: True)
+        Whether to create a new figure
+    subplot : int (default: 111)
+        Subplot to plot in  
+    xlims : tuple (default: None)
+        X-axis limits
+    ylims : tuple (default: None)   
+        Y-axis limits
+    norm_factor : float (default: 1.0)
+        Normalization factor for the persistence image
+    vmin : float (default: None)
+        Minimum value for the colormap
+    vmax : float (default: None)
+        Maximum value for the colormap
+    cmap : str (default: 'jet')
+        Colormap to use
+    weighted : bool (default: False)
+        Whether to weight the average by the number of points in each diagram
+    add_colorbar : bool (default: False)
+        Whether to add a colorbar
+    **kwargs : dict
+        Keyword arguments to pass to the plotting function
+
+    Returns
+    -------
+    av_imgs : np.array
+        Average image
+    cm.plot_style
+        Plot style object
     """
     # pylint: disable=unexpected-keyword-arg
     av_imgs = analysis.get_average_persistence_image(ph_list, xlims=xlims, ylims=ylims,
@@ -177,20 +278,23 @@ def persistence_image_average(ph_list, new_fig=True, subplot=111, xlims=None,
 
 
 if __name__ == '__main__':
-    os.chdir('/gpfs/bbp.cscs.ch/project/proj112/home/kurban/hippdiss-1/morph_features/')
-    print(f'Current working directory: {os.getcwd()}')
+    #os.chdir('./')
+    #print(f'Current working directory: {os.getcwd()}')
 
     orig_folder = 'orig_morphs'
-    repaired_folder = 'repaired_morphs'
-    clone_folder = '08_Cloned_morphs'
-    morph_format = 'asc'
+    #repaired_folder = 'repaired_morphs'
+    #clone_folder = '08_Cloned_morphs'
+    morph_format = 'swc'
     
     #xlab = 'End radial distance'
     #ylab = 'Start radial distance'
     xlab = ''
     ylab = ''
-    output_dir = '/gpfs/bbp.cscs.ch/project/proj112/home/kurban/hippdiss-1/morph_features/output_rescaled'
+    output_dir = './output/persistent_images'
+    os.makedirs(output_dir,exist_ok=True)
+
     file_name_to_dump = f'{output_dir}/persistent_data.pkl'
+
 
     if not os.path.exists(file_name_to_dump):
         mtype_dict = {}
