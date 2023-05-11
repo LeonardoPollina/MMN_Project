@@ -1,0 +1,76 @@
+{
+  "@id": "https://bbp.epfl.ch/neurosciencegraph/data/ac873523-16b6-4695-8017-d3ed72e778c5",
+  "@type": [
+    "BrainParcellationMesh",
+    "Mesh"
+  ],
+  "atlasRelease": {
+    "@id": "https://bbp.epfl.ch/neurosciencegraph/data/831a626a-c0ae-4691-8ce8-cfb7491345d9"
+  },
+  "brainLocation": {
+    "atlasSpatialReferenceSystem": {
+      "@id": "https://bbp.epfl.ch/neurosciencegraph/data/allen_ccfv3_spatial_reference_system",
+      "@type": [
+        "AtlasSpatialReferenceSystem",
+        "BrainAtlasSpatialReferenceSystem"
+      ]
+    },
+    "brainRegion": {
+      "@id": "mba:726",
+      "label": "Dentate gyrus"
+    }
+  },
+  "contribution": {
+    "@type": "Contribution",
+    "agent": {
+      "@id": "https://www.grid.ac/institutes/grid.417881.3",
+      "@type": [
+        "Organization",
+        "Agent"
+      ]
+    }
+  },
+  "description": "Brain region mesh - Dentate Gyrus (ID: 726)",
+  "distribution": {
+    "@type": "DataDownload",
+    "contentSize": {
+      "unitCode": "bytes",
+      "value": 681474
+    },
+    "contentUrl": "https://bbp.epfl.ch/nexus/v1/files/bbp/atlas/87e577d7-c82b-472e-92cd-8890528e02e1",
+    "digest": {
+      "algorithm": "SHA-256",
+      "value": "e23673ce7b9428e40ce05e3570ca6ef0d6f70930e2b9bb0341c4d3aa7ef2f3b9"
+    },
+    "encodingFormat": "application/obj",
+    "name": "726.obj"
+  },
+  "isRegisteredIn": {
+    "@id": "https://bbp.epfl.ch/neurosciencegraph/data/allen_ccfv3_spatial_reference_system",
+    "@type": [
+      "BrainAtlasSpatialReferenceSystem",
+      "AtlasSpatialReferenceSystem"
+    ]
+  },
+  "name": "Dentate Gyrus mesh",
+  "spatialUnit": "um",
+  "subject": {
+    "@type": "Subject",
+    "species": {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_10090",
+      "label": "Mus musculus"
+    }
+  },
+  "_constrainedBy": "https://neuroshapes.org/dash/brainparcellationmesh",
+  "_createdAt": "2019-09-20T09:08:50.457Z",
+  "_createdBy": "https://bbp.epfl.ch/nexus/v1/realms/bbp/users/lurie",
+  "_deprecated": false,
+  "_incoming": "https://bbp.epfl.ch/nexus/v1/resources/bbp/atlas/datashapes:brainparcellationmesh/ac873523-16b6-4695-8017-d3ed72e778c5/incoming",
+  "_outgoing": "https://bbp.epfl.ch/nexus/v1/resources/bbp/atlas/datashapes:brainparcellationmesh/ac873523-16b6-4695-8017-d3ed72e778c5/outgoing",
+  "_project": "https://bbp.epfl.ch/nexus/v1/projects/bbp/atlas",
+  "_rev": 4,
+  "_schemaProject": "https://bbp.epfl.ch/nexus/v1/projects/neurosciencegraph/datamodels",
+  "_self": "https://bbp.epfl.ch/nexus/v1/resources/bbp/atlas/datashapes:brainparcellationmesh/ac873523-16b6-4695-8017-d3ed72e778c5",
+  "_updatedAt": "2021-06-29T14:59:49.490Z",
+  "_updatedBy": "https://bbp.epfl.ch/nexus/v1/realms/bbp/users/lurie"
+}

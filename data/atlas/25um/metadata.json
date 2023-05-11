@@ -1,0 +1,127 @@
+{
+  "@id": "https://bbp.epfl.ch/neurosciencegraph/data/025eef5f-2a9a-4119-b53f-338452c72f2a",
+  "@type": [
+    "BrainParcellationDataLayer",
+    "VolumetricDataLayer"
+  ],
+  "atlasRelease": {
+    "@id": "https://bbp.epfl.ch/neurosciencegraph/data/831a626a-c0ae-4691-8ce8-cfb7491345d9"
+  },
+  "brainLocation": {
+    "atlasSpatialReferenceSystem": {
+      "@id": "https://bbp.epfl.ch/neurosciencegraph/data/allen_ccfv3_spatial_reference_system",
+      "@type": [
+        "AtlasSpatialReferenceSystem",
+        "BrainAtlasSpatialReferenceSystem"
+      ]
+    },
+    "brainRegion": {
+      "@id": "mba:997",
+      "label": "root"
+    }
+  },
+  "bufferEncoding": "gzip",
+  "componentEncoding": "uint32",
+  "contribution": {
+    "@type": "Contribution",
+    "agent": {
+      "@id": "https://www.grid.ac/institutes/grid.417881.3",
+      "@type": [
+        "Organization",
+        "Agent"
+      ]
+    }
+  },
+  "dataSampleModality": [
+    "parcellationId"
+  ],
+  "description": "Original Allen ccfv3 annotation volume at 25 microns",
+  "dimension": [
+    {
+      "@type": "ComponentDimension",
+      "name": "label",
+      "size": 1
+    },
+    {
+      "@type": "SpaceDimension",
+      "size": 528,
+      "unitCode": "µm"
+    },
+    {
+      "@type": "SpaceDimension",
+      "size": 320,
+      "unitCode": "µm"
+    },
+    {
+      "@type": "SpaceDimension",
+      "size": 456,
+      "unitCode": "µm"
+    }
+  ],
+  "distribution": {
+    "@type": "DataDownload",
+    "contentSize": {
+      "unitCode": "bytes",
+      "value": 4035363
+    },
+    "contentUrl": "https://bbp.epfl.ch/nexus/v1/files/bbp/atlas/26f23cfd-700b-4ba9-abc7-a0293d7f7631",
+    "digest": {
+      "algorithm": "SHA-256",
+      "value": "c620cbcc562183e4dcd40250d440130501781f74b41de35b1c1bdabace290c42"
+    },
+    "encodingFormat": "application/nrrd",
+    "name": "annotation_25_ccf2017.nrrd"
+  },
+  "endianness": "little",
+  "fileExtension": "nrrd",
+  "isRegisteredIn": {
+    "@id": "https://bbp.epfl.ch/neurosciencegraph/data/allen_ccfv3_spatial_reference_system",
+    "@type": [
+      "BrainAtlasSpatialReferenceSystem",
+      "AtlasSpatialReferenceSystem"
+    ]
+  },
+  "name": "annotation_25_ccf2017",
+  "resolution": {
+    "unitCode": "µm",
+    "value": 25
+  },
+  "sampleType": "label",
+  "subject": {
+    "@type": "Subject",
+    "species": {
+      "@id": "http://purl.obolibrary.org/obo/NCBITaxon_10090",
+      "label": "Mus musculus"
+    }
+  },
+  "worldMatrix": [
+    25,
+    0,
+    0,
+    0,
+    0,
+    25,
+    0,
+    0,
+    0,
+    0,
+    25,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "_constrainedBy": "https://neuroshapes.org/dash/volumetricdatalayer",
+  "_createdAt": "2019-08-20T11:33:21.742Z",
+  "_createdBy": "https://bbp.epfl.ch/nexus/v1/realms/bbp/users/lurie",
+  "_deprecated": false,
+  "_incoming": "https://bbp.epfl.ch/nexus/v1/resources/bbp/atlas/datashapes:volumetricdatalayer/025eef5f-2a9a-4119-b53f-338452c72f2a/incoming",
+  "_outgoing": "https://bbp.epfl.ch/nexus/v1/resources/bbp/atlas/datashapes:volumetricdatalayer/025eef5f-2a9a-4119-b53f-338452c72f2a/outgoing",
+  "_project": "https://bbp.epfl.ch/nexus/v1/projects/bbp/atlas",
+  "_rev": 9,
+  "_schemaProject": "https://bbp.epfl.ch/nexus/v1/projects/neurosciencegraph/datamodels",
+  "_self": "https://bbp.epfl.ch/nexus/v1/resources/bbp/atlas/datashapes:volumetricdatalayer/025eef5f-2a9a-4119-b53f-338452c72f2a",
+  "_updatedAt": "2021-10-27T08:03:03.304Z",
+  "_updatedBy": "https://bbp.epfl.ch/nexus/v1/realms/bbp/users/lurie"
+}
