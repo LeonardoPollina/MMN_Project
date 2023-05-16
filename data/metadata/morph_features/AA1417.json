@@ -1,0 +1,69 @@
+{
+    "neuron_id": 260068,
+    "neuron_name": "AA1417",
+    "archive": "MouseLight",
+    "note": "",
+    "age_scale": "Month",
+    "gender": "Female",
+    "age_classification": "adult",
+    "brain_region": [
+        "basal forebrain",
+        "substantia innominata"
+    ],
+    "cell_type": [
+        "principal cell",
+        "projection"
+    ],
+    "species": "mouse",
+    "strain": "C56BL/6",
+    "scientific_name": null,
+    "stain": "enhanced green fluorescent protein",
+    "experiment_condition": [
+        "Control"
+    ],
+    "protocol": "in vivo",
+    "slicing_direction": "coronal",
+    "reconstruction_software": "Janelia Workstation-Large Volume Viewer",
+    "objective_type": "oil",
+    "original_format": "Janelia Workstation-Large Volume Viewer.swc",
+    "domain": "Dendrites, Soma, Axon",
+    "attributes": "No Diameter, 3D, Angles",
+    "magnification": "40",
+    "upload_date": "2023-05-04",
+    "deposition_date": "2022-03-05",
+    "shrinkage_reported": "Not reported",
+    "shrinkage_corrected": "",
+    "reported_value": null,
+    "reported_xy": null,
+    "reported_z": null,
+    "corrected_value": null,
+    "corrected_xy": null,
+    "corrected_z": null,
+    "soma_surface": "12.4616",
+    "surface": "2066360.0",
+    "volume": "1033180.0",
+    "slicing_thickness": "25",
+    "min_age": "2.0",
+    "max_age": "2.0",
+    "min_weight": "25.0",
+    "max_weight": "25.0",
+    "png_url": null,
+    "reference_pmid": [
+        "30859571"
+    ],
+    "reference_doi": [
+        "10.1101/537233"
+    ],
+    "physical_Integrity": "Dendrites Moderate, Axon Complete",
+    "_links": {
+        "self": {
+            "href": "http://neuromorpho.org/api/neuron/id/260068"
+        },
+        "measurements": {
+            "href": "http://neuromorpho.org/api/morphometry/id/260068"
+        },
+        "persistence_vector": {
+            "href": "http://neuromorpho.org/api/pvec/id/260068"
+        }
+    }
+}

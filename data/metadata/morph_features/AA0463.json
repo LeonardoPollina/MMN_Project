@@ -1,0 +1,72 @@
+{
+    "neuron_id": 122073,
+    "neuron_name": "AA0463",
+    "archive": "MouseLight",
+    "note": "",
+    "age_scale": "Month",
+    "gender": "Female",
+    "age_classification": "adult",
+    "brain_region": [
+        "neocortex",
+        "frontal",
+        "primary motor",
+        "layer 6a"
+    ],
+    "cell_type": [
+        "principal cell",
+        "pyramidal",
+        "projection"
+    ],
+    "species": "mouse",
+    "strain": "C57BL/6",
+    "scientific_name": "",
+    "stain": "enhanced green fluorescent protein",
+    "experiment_condition": [
+        "Control"
+    ],
+    "protocol": "in vivo",
+    "slicing_direction": "coronal",
+    "reconstruction_software": "Janelia Workstation-Large Volume Viewer",
+    "objective_type": "oil",
+    "original_format": "Janelia Workstation-Large Volume Viewer.swc",
+    "domain": "Dendrites, Soma, Axon",
+    "attributes": "No Diameter, 3D, Angles",
+    "magnification": "40",
+    "upload_date": "2019-12-13",
+    "deposition_date": "2019-10-02",
+    "shrinkage_reported": "",
+    "shrinkage_corrected": null,
+    "reported_value": null,
+    "reported_xy": null,
+    "reported_z": null,
+    "corrected_value": null,
+    "corrected_xy": null,
+    "corrected_z": null,
+    "soma_surface": "12.4185",
+    "surface": "10962.0",
+    "volume": "685.125",
+    "slicing_thickness": "25",
+    "min_age": "2.0",
+    "max_age": "2.0",
+    "min_weight": "25.0",
+    "max_weight": "25.0",
+    "png_url": "http://neuromorpho.org/images/imageFiles/MouseLight/AA0463.png",
+    "reference_pmid": [
+        "-8"
+    ],
+    "reference_doi": [
+        "10.2139/ssrn.3330557"
+    ],
+    "physical_Integrity": "Dendrites Moderate, Axon Complete",
+    "_links": {
+        "self": {
+            "href": "http://neuromorpho.org/api/neuron/id/122073"
+        },
+        "measurements": {
+            "href": "http://neuromorpho.org/api/morphometry/id/122073"
+        },
+        "persistence_vector": {
+            "href": "http://neuromorpho.org/api/pvec/id/122073"
+        }
+    }
+}
